@@ -6,19 +6,37 @@
   background:#a00303;
 }
 
-.my_nav p{
+/*修改選單列背景顏色*/
+
+.navbar-inverse{
+  box-shadow: 0 0 8px 2px black /*box陰影*/
+}
+
+.my_nav p{ 
   color: white;
   padding: 5px;
   margin-top: 10px;
   font-size: 24px;
 }
+
 .my_nav li{
-  margin:2px;
+  margin:2px; /*每個選單中的間距*/
+}
+
+.navbar-nav{
+    margin-top: 10px;
+/*  選單跟頂端的行距*/
+}
+
+.nav>li>a {
+   padding: 10px 15px;
+   /*選單button內的字距*/
 }
 
 
-#about{
+#about, #work, #contact{
   padding-top:64px;
+ /*把三區都往下移，避開導覽列*/ 
 }
 
 #about img{
@@ -28,7 +46,7 @@
 hr.bar{
   border: 2px solid #a00303;
   width: 120px;
-  margin:40px auto;
+  margin-top:70px;
 }
 
 .work_info{
@@ -38,24 +56,24 @@ hr.bar{
 
   text-align: center;
   vertical-align:bottom; 
-  padding:13em 10px 0em 10px;
+  padding:14.5em 10px 0em 10px;
+  /*文字間距上14.5行 右10px 下0 右10px*/
 
-  /*background-color: rgba(255,255,255,.4); /*rgba設定背景半透明*/
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+58,ffffff+79&0+58,1+79 */
-background: -moz-linear-gradient(top,rgba(255,255,255,0) 20%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,rgba(255,255,255,0) 20%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,rgba(255,255,255,0) 20%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*background-color: rgba(255,255,255,.4); /*rgba設定整塊背景半透明*/
+  /*下面套用背景漸層透明,從30%的地方開始由0(全透明)漸層到1(無透明) Permalink - http://colorzilla.com/gradient-editor*/
+background: -moz-linear-gradient(top,rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,rgba(255,255,255,0) 30%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,rgba(255,255,255,0) 30%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
   position: absolute;
   bottom:0px;
   left:0px;
   overflow: auto;
-
 }
 
 .row img{
-  margin-top: 15px;
+  margin-top: 25px;
 }
 .work_info:hover{ /*當滑鼠滑過時的動作*/
   opacity: 1; /*不透明*/
@@ -63,24 +81,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .work_info h4{
   margin: 4px auto;
-  padding-top: 5px;
 }
 
 #contact_form{
   margin-bottom: 50px;
+  /*在整個contact_form下面留白*/
 }
 
 @media screen and (max-width: 768px){
 
   .my_nav ul{
     display: inline-flex;
+    /*當螢幕小於768px的時候，選單並排(Bootsrap預設是block)*/
   }
 
-@media screen and (max-width:371px){
+  .my_nav p{ 
+  color: white;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 24px;
+}
 
+
+@media screen and (max-width:300px){
   .my_nav ul{
    display:block;
-   float: right;
    width: 100%;
    margin: auto;
+   /*當螢幕小於300px的時候，選單變成block顯示，且每個button寬100%*/
   }
